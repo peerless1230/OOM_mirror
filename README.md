@@ -1,8 +1,10 @@
 # OOM_mirror
-Mirror of ONAP OOM project
-[ONAP OOM](https://git.onap.org/oom)
+Mirror of ONAP OOM project：[ONAP OOM](https://git.onap.org/oom)
 
-## release-1.0
+## OOM项目简介
+ONAP Operations Manager，设计目标是：负责ONAP平台的组件生命周期管理，目前大多使用OOM来完成ONAP整体系统在Kubernetes上的快速部署。此mirror项目的关注点也是ONAP与Kubernetes的集成
+
+## release-1.0分支部署
 ```
 curl http://10.20.23.240/softwares/docker/get_1.0_from_nexus.sh | sh
 docker run -d –restart=unless-stopped -p 8880:8080 rancher/server
@@ -33,8 +35,9 @@ vi onap-parameters.yaml
 cd ../oneclick
 ./createAll.bash -n onap
 ```
-更多细节请查阅 [OOM部署ONAP](http://notafraid.me/2017/09/30/oom_deploy_onap/)
-## master&Amsterdam版本分支
+`release-1.0`的更多细节请查阅 [OOM部署ONAP](http://notafraid.me/2017/09/30/oom_deploy_onap/)
+
+## master&Amsterdam版本分支部署
 可利用社区的脚本，完成Rancher及其ONAP环境（即Rancher Kubernetes的改名）初始化
 ```
 wget https://jira.onap.org/secure/attachment/11117/oom_rancher_setup.sh
@@ -51,4 +54,4 @@ wget https://jira.onap.org/secure/attachment/11126/aai-cloud-region-put.json
 # 以下操作，等待时间较长，取决于pull docker镜像的速度
 ./cd.sh -b master
 ```
-更多细节请查阅 [ONAP Wiki - ONAP+on+Kubernetes](https://wiki.onap.org/display/DW/ONAP+on+Kubernetes)
+`master&Amsterdam`的更多细节请查阅 [ONAP Wiki - ONAP+on+Kubernetes](https://wiki.onap.org/display/DW/ONAP+on+Kubernetes)
